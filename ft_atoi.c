@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:34:09 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/03 16:34:01 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/03 22:34:49 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	long	nb;
 	long	neg;

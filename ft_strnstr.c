@@ -3,38 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:16:02 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/03 14:32:32 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/03 22:31:49 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(char *haystack, char *needle, size_t len)
 {
-	char	*ptr;
-	char	*finded;
-	size_t	i;
+	size_t	c;
+	size_t	d;
+	size_t	needle_size;
 
+	c = 0;
 	if (!haystack || !needle)
 		return (NULL);
-	ptr = (char *)haystack;
-	while (ptr && *ptr)
+	if (!*needle)
+		return (haystack);
+	needle_size = ft_strlen(needle);
+	while (haystack[c] && c < len)
 	{
-		i = 0;
-		ptr = ft_strchr(ptr, (int)needle[i]);
-		if (ptr - haystack > (long)len)
-			return (NULL);
-		if (ptr[i] == haystack[i])
+		d = 0;
+		while (haystack[c + d] == needle[d] && needle[d] && (c + d) < len)
+			d++;
+		if (d == needle_size)
 		{
-			finded = &ptr[i];
-			while (ptr[i] && haystack[i] && ptr[i] == haystack[i])
-				i++;
-			if (!haystack[i])
-				return (finded);
+			haystack += c;
+			return (haystack);
 		}
+		c++;
 	}
 	return (NULL);
 }

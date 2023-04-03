@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:53:14 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/03 13:58:05 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:41:17 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
 	unsigned char	*ptr;
 
-	i = 0;
 	ptr = (unsigned char *)s;
 	while (ptr && n-- > 0)
 	{
