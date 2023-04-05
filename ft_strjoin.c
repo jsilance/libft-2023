@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:33:16 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/04 11:54:58 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/05 03:41:12 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 				+ ft_strlen((char *)s2) + 1));
 	if (!ptr)
 		return (NULL);
-	while (*s1)
+	while (s1 && *s1)
 		ptr[i++] = *s1++;
-	while (*s2)
+	while (s2 && *s2)
 		ptr[i++] = *s2++;
 	ptr[i] = '\0';
 	return (ptr);

@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:20:24 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/04 12:46:04 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/05 03:39:04 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	i = 0;
+	if (start >= ft_strlen((char *)s))
+		return (ft_strdup(""));
 	ptr = (char *)malloc(sizeof(char) * len + 1);
 	if (!ptr)
 		return (NULL);
