@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 13:07:18 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/04 11:45:46 by jusilanc         ###   ########.fr       */
+/*   Created: 2023/04/04 11:02:51 by jusilanc          #+#    #+#             */
+/*   Updated: 2023/04/04 11:28:07 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	dst_size;
-	size_t	src_size;
-	size_t	maxcat;
-	size_t	i;
+	char			*ptr;
+	unsigned int	i;
 
-	dst_size = ft_strlen(dst);
-	src_size = ft_strlen(src);
+	if (!s || !f)
+		return (NULL);
 	i = 0;
-	maxcat = dstsize - dst_size - 1;
-	if (dstsize > dst_size)
+	ptr = (char *)malloc(sizeof(char) * ft_strlen((char *)s) + 1);
+	if (!ptr)
+		return (NULL);
+	while (s[i])
 	{
-		while (i < maxcat && src[i])
-		{
-			dst[dst_size + i] = src[i];
-			i++;
-		}
-		dst[dst_size + i] = '\0';
+		ptr[i] = f(i, s[i]);
+		i++;
 	}
-	if (dstsize < dst_size)
-		return (src_size + dstsize);
-	return (src_size + dst_size);
+	ptr[i] = '\0';
+	return (ptr);
 }
