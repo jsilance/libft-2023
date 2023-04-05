@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 14:34:09 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/03 22:34:49 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:02:45 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ int	ft_atoi(char *str)
 		if (*str++ == '-')
 			neg = -1;
 	while (str && ft_isdigit(*str))
+	{
 		nb = nb * 10 + *str++ - '0';
+		if (nb < 0 && neg == 1)
+			return (-1);
+		if (nb < 0 && neg == -1)
+			return (0);
+	}
 	return (nb * neg);
 }

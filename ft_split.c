@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+        */
+/*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:21:32 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/05 01:40:18 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:05:01 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ static char	**ft_duty_free(char **ptr_ptr, int words)
 	int	i;
 
 	i = 0;
+	if (ptr_ptr)
+		return (NULL);
 	while (ptr_ptr[i] && i < words)
 		free((void *)ptr_ptr[i++]);
-	if (ptr_ptr)
-		free((void *)ptr_ptr);
+	free((void *)ptr_ptr);
 	return (NULL);
 }
 
