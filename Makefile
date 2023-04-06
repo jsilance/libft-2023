@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jusilanc <jusilanc@student.s19.be>         +#+  +:+       +#+         #
+#    By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/03 21:43:42 by jusilanc          #+#    #+#              #
-#    Updated: 2023/04/05 03:42:17 by jusilanc         ###   ########.fr        #
+#    Updated: 2023/04/06 16:08:56 by jusilanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,6 @@ OBJ = ${SRC:.c=.o}
 ${NAME}: ${OBJ}
 		@ar rc ${NAME} ${OBJ}
 		@ranlib ${NAME}
-
-so:
-	cc -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 all: ${NAME}
 
