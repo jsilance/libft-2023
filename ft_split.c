@@ -6,7 +6,7 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:21:32 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/05 19:05:01 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:26:23 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 		i[1] = 0;
 		while (*s && *s == c)
 			s++;
-		while (*s && s[i[1]] != c)
+		while (s[i[1]] && s[i[1]] != c)
 			i[1]++;
 		ptr[i[0]++] = ft_substr(s, 0, i[1]);
 		if (!ptr[i[0] - 1])
