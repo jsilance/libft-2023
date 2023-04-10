@@ -6,13 +6,13 @@
 /*   By: jusilanc <jusilanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:44:50 by jusilanc          #+#    #+#             */
-/*   Updated: 2023/04/05 19:11:56 by jusilanc         ###   ########.fr       */
+/*   Updated: 2023/04/10 17:40:28 by jusilanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
 	char	*ptr;
 
